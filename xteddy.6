@@ -1,0 +1,159 @@
+.TH XTEDDY 6 "25 May 2005" "X Version 11"
+.SH NAME
+xteddy - cuddly teddy bear for your X Windows desktop.
+.SH SYNOPSIS
+.B xteddy
+[
+.B \-wm \-float \-noquit \-nocursor \-F<file>
+]
+.br
+[
+.B \-geometry \WIDTHxHEIGHT+X+Y \-display SERVER
+]
+.br
+[
+.B \-h --help -v
+]
+.SH DESCRIPTION
+.I Xteddy
+is a cuddly teddy bear for your X Windows desktop.
+.PP
+Normally,
+.I xteddy
+just sits around doing nothing. After all, that's what
+teddy bears are for. Look at him, talk to him, place heavy windows on
+top of him, zap him around until he becomes dizzy, do what you like;
+he will always be your true (albeit virtual) friend.
+.PP
+You can move
+.I xteddy
+with the mouse by pointing at him and dragging
+him around. When clicked upon, he will pop up on top of all other
+windows. If you type "q" or "Esc" on him, he will exit (or, as I like to think
+of it, be tucked away in the file system until you need him next time).
+.PP
+That's it. But he's cute.
+.SH OPTIONS
+.TP
+.B \-wm
+Use the window manager. Normally,
+.I xteddy
+sets the override_redirect flag for his window, which will cause most
+window managers to ignore him. However, some window managers might have
+problems coping with a window that is nailed directly to the root.
+In that case, use this option. If possible, instruct your window manager
+not to put any title bar or window frame on the window, or
+.I xteddy
+will lose some of his charm.
+.TP
+.B \-float
+Float up on top of overlapping windows. This will make
+.I xteddy
+stay in sight at all times, so you won't lose him. However, this
+is a bit intrusive and quite unlike a real teddy bear, so it is not
+the default action.
+.TP
+.B \-noquit
+Disable the "quit" command (do not quit when typing "q" in the window,
+but of course still on explicit window kills or process kills).
+This might seem an unnecessary option, but if you use the -wm option
+.I Xteddy
+might keep receiving keyboard events even after the mouse has left his
+window. I you use the -wm option in conjunction with a click-to-type
+window manager, you would probably want to include this option.
+.TP
+.B \-nocursor
+Disable the X11 cursor over the
+.I xteddy
+window.
+.TP
+.B \-F,\-f
+<
+.I file
+>
+Display another image instead of
+.I xteddy.
+.I file
+can be the full name of an image file which reasonably should contain
+a transparent background.  If there is no such file in the current
+working directory
+.I xteddy
+searches in $(installation_prefix)/share/xteddy, where
+$(installation_prefix) is determined at compile time (for instance
+/usr/X11R6).  If this fails by default /usr/share/xteddy is searched.
+Failing this, /usr/local/share/xteddy is searched.
+If there is no such file in these directories the following appendixes
+where appended to the given name: xpm, png, tif, jpg, jpeg, gif and
+pnm.  These files will be searched in the three directories.  If all
+files the last try is to append the extensions in upper cases. '\-F'
+and '\-f' are equivalent, and the space in '-f <file>' is optional.
+.PP
+If no `-F` parameter is given \fBfile\fP equals to \fIxteddy\fP
+or more precisely
+to the name of the calling program.  For instance if there is a symlink
+.RS
+.PP
+\fBln -s xteddy xpenguin\fP 
+.RE
+.PP
+then \fBfile\fP equals to \fIxpenguin\fP and the 
+appropriate pixmaps with the name \fIxpenguin\fP are searched for.
+.PP
+.RE
+.TP
+.B \-geometry
+The standard X geometry specification. Only X and Y position requests
+are honored. Any height and width specifications will be ignored.
+.TP
+.B \-display
+Specify an X server other than the local display.
+.br
+.TP
+.B \-h, --help
+Print a help message and exit.
+.br
+.TP
+.B \-v
+Print the version number and exit.
+.br
+.ne 8
+.SH BEARS
+.br
+.ne 8
+The cast of characters is currently: 
+teddy xalex xbobo   xbrummi xcherubino xduck xhedgehog  xklitze xnamu  xorca xpenguin 
+xpuppy  xruessel xteddy xtrouble.png xtrouble_large xtuxxy.
+.SH AUTHOR
+Stefan Gustavson, ISY-LiTH (stegu@itn.liu.se).
+.I Xteddy
+is distributed under the GNU General Public License.
+.SH BUGS
+The Desktop Manager in Sun CDE (Common Desktop Environment) does not
+like xteddy. Xteddy by default does not use the window manager, and so
+he shows up as a sticky window on all desktops. If you don't like this,
+and try to circumvent it by running him with the -wm option, move him
+by grabbing him by the tummy instead of by the title bar, and then move
+him partly off the screen, the image is lost and never redrawn again,
+so all you see is a silhouette of a teddy bear.
+I have no idea why this happens. If you know, please tell me, and if you
+can fix it, please do. If you run CDE on other platforms than Sun, please
+tell me if it works for you. CDE does something which xteddy does not
+handle properly, and since I have a Sun with CDE myself I would like to
+know what the problem is.
+.PP
+For most X servers, the -float option does not work properly if xteddy
+is moved partially off the screen. This is the X server's fault, not mine.
+.PP
+If two copies of
+.I xteddy
+are placed so they overlap, and both were run with the
+.I -float
+option, the X server will try to put each on top of the other in an
+endless loop, which looks very bad and takes a lot of CPU power.
+.PP
+.I Xteddy
+does not make use of the X resource database. I just didn't get around
+to that. 
+.PP
+Please send bug reports, fixes, suggestions, fan mail or or hacks to:
+stegu@itn.liu.se.

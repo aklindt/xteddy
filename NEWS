@@ -1,0 +1,46 @@
+2009-02-25:
+  * Ported to Imlib2 (Thanks to Peter De Wachter <pdewacht@gmail.com>)
+
+1999-08-02: (2.0.1) Andreas Tille
+  * renamed xtux to xtuxxy to avoid name space pollution
+
+1999-03-25: (2.0) Andreas Tille
+  * New pixmaps:
+    xtux:     Hanno Mueller <kontakt@hanno.de>
+    xorca:    Jaime E. Villate <villate@fe.up.pt>
+    xalex, xbobo, xbrummi, xklitze, xnamu, xruessel:
+              Andreas Tille <tille@physik.uni-halle.de>
+  * xteddy_test script which shows _all_ available pixmaps
+  * xtoys script which randomly chooses a pixmap
+
+1998-12-20: (1.9) Andreas Tille
+  * Replaxe libXPM by Imlib, load various image file formats
+  * New pixmaps: 
+    xpenguin: Alex Romosan <romosan@caliban.lbl.gov>
+    xduck:    Hanno Mueller <hanno@lava.de>
+
+/* 1997-08-07: (1.0.3)                              */
+/* Added -display and -noquit options. Changed the  */
+/* names of options "-f" and "-w" to "-float" and   */
+/* "-wm" for clarity reasons.                       */
+
+/* 1994-02-11: (1.0.2) Touched up the icon bitmap.  */
+/* Made xteddy aware of reparenting in order to     */
+/* get the coordinates right for mouse movements.   */
+/* Joined the color and grayscale pixmaps into one  */
+/* single file. The choice between grayscale or     */
+/* color is now made by the Xpm library function.   */
+
+/* 1994-02-01: (1.0.1) Compacted the large pixmap   */
+/* files to 1 char per pixel to save about 100K     */
+/* in both the source and the executable.           */
+/* Fixed some minor bugs to compile on other        */
+/* platforms than Sun.                              */
+/* Added a command-line option -w to make xteddy    */
+/* use the window manager if desired.               */
+/* Added a manpage. (Thanks to Reinhard Zierke)     */
+/* Added an option -f to make xteddy float on top   */
+/* of all windows. (suggested by Bert Gijsbers)     */
+
+/* 1994-01-20: First working version (1.0).         */
+/* Supports mono, grayscale and color displays.     */

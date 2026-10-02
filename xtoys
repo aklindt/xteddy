@@ -1,0 +1,17 @@
+#!/bin/bash
+#
+# /usr/bin/X11/xtoys -- puts a random cuddly toy onto desktop
+#
+# Thanks to Andrew Stribblehill <a.d.stribblehill@dur.ac.uk>
+# who supported this script
+#
+if [ -d /usr/local/share/xteddy ] ; then
+  images=(`ls /usr/share/xteddy` `ls /usr/local/share/xteddy 2> /dev/null`)
+else
+  images=(`ls /usr/share/xteddy`)
+fi
+
+num=${#images[*]}
+choice=`expr $RANDOM % $num`
+
+/usr/games/xteddy -F${images[choice]} $*

@@ -1,0 +1,156 @@
+XTeddy 2.2:
+
+Wed Feb 25 2009 07:25:17 Peter De Wachter <pdewacht@gmail.com>
+
+	* Ported to Imlib2
+	* Applied patch to work with gcc 4.4 (Thanks to
+	  Lubomir Rintel <lkundrak@v3.sk>)
+	* Added -nocursor option (Thanks to
+	  Frank Heckenbach <f.heckenbach@fh-soft.de>)
+
+XTeddy 2.1:
+
+Wed May 25 2005 07:25:17 Andreas Tille  (tille@debian.org)
+
+	* Merged changes of the Debian released version which are
+	  - new automake stuff
+	  - xteddy.1 -> xteddy.6 because it belongs to games
+	* Removed precompiled stuff and Makefiles out of the tarball
+	  (the Makefile will be created by configure and precompiled
+	   stuff should not be included anyway)
+	* Moved single image credits to only one file: images.credits
+
+Wed May 25 2005 02:25:21 Richard Neill (rn214@hermes.cam.ac.uk)
+	
+	* option to use -f rather than -F.  This seems more natural. (a fix for
+	  the resultant collision with -float has been added)
+	
+	* option to have a space after the -f/-F before the filename. eg 'xteddy
+	  -f xtuxxy'. This is more usual - and indeed, I was
+	  rather confused to find it did not initially work like that. The original
+	  behaviour (without the space) is still valid.
+	
+	* added options -h, --help  for help. Added -v for version.
+	
+	* added /usr/local/share/xteddy to the default search path. However,
+	  this may be a symptom of a broken configure script, since the default
+	  search path does not depend on the value of --prefix at compile time.
+	  You may wish to remove this!
+	
+	* Fixed a very subtle bug whereby running ./xteddy would fail. If the
+	  current directory contains a file called xteddy, then this image is the
+	  one that will be displayed.
+	  But, if we are executing from the source directory, then the file
+	  called xteddy therein is in fact an executable, not an image. There
+	  is a slightly ugly
+	  hack involving the comparison of the inode numbers to test for this
+	  case.
+	  [Even more subtle is if the program is invoked as "xteddy" without
+	  the path, and the working directory contains a subdirectory called
+	  xteddy...]
+	
+	* Fixed: if invoked as etg 'xteddy - f xpenguin' (missing the .png),
+	  then it won't work, unless there is a file called xpenguin in the
+	  CURRENT directory.
+	  That is what this line does:
+		strcat(sbuf, ".");   /* missing the dot before the extension! */
+	
+	* Improved error message if the file is not a valid image.
+	
+	* Added Esc key to quit as well as the existing "q" and "Q".
+	
+	* Changed man page: when you type q on him, he "exits". "die" is not a
+	  good word to ever use with a teddy!
+	
+	* updated man page and code comments to reflect the changes.
+	
+	* Updated Makefile.
+	
+	* Added a few more images: xcherubino (rabbit), xtrouble (teddy), xpuppy
+	  (labrador), xhedgehog. These, + source are in the xteddy_extras directory,
+	  so you'll need to move them into the right place.
+	
+	
+	Idea: it might be nice if right-clicking on an existing xteddy would
+	bring up an option to quit.
+	
+	Idea: it might be nice if an unrecognised option (eg "xteddy -X")
+	brought up the help message.
+	
+	Idea: it might be nice if we could also have xmoggy -> a cat.
+	
+	
+	Note: I haven't changed things like your changelog, and the Authors file.
+	Note: some of my image files are in 2 places (duplicated rather than
+	symlinks, for convenience)
+
+XTeddy 2.0.2:
+
+Mon Jun 30 08:53:17 2003  Andreas Tille  (tille@debian.org)
+
+	* Changed e-mail adress of Andreas Tille
+	* Added menu icons
+	* Renamed xteddy.1 to xteddy.6
+	* Fixed xtoys
+				         
+XTeddy 2.0.1:
+
+Mon Aug 2 10:11:12 1999  Andreas Tille  (tille@physik.uni-halle.de)
+ 
+	* renamed xtux to xtuxxy to avoid name space pollution 
+	
+XTeddy 2.0:
+
+Thu Apr 6 13:41:17 1999  Andreas Tille  (tille@physik.uni-halle.de)
+ 
+	* Some bugfixes 
+
+XTeddy 1.9:
+
+Thu Dec 20 29:44:17 1998  Andreas Tille  (tille@physik.uni-halle.de)
+ 
+	* Replace libXPM by Imlib, read various image file formats
+	* delete icon stuff (why and how should we iconify XTeddy??)
+	* removed -mono option because user supported images normally
+	  will not support a gray map
+	* Thanks to Hanno Mueller <hanno@lava.de> for the xduck pixmap.
+
+XTeddy 1.2:
+
+Thu Jan 07 16:47:17 1999 Andreas Tille (tille@physik.uni-halle.de)
+	* corrected a stupid bug which let xteddy fail if called
+	  with absolute path
+
+Thu Oct 22 16:56:11 1998  Andreas Tille  (tille@physik.uni-halle.de)
+        * added a smoother (nicer) xteddy named only teddy
+	* New xpenguin with decreased colors which gives a greater
+          possibilty to work on poor colored displays
+
+
+XTeddy 1.1:
+
+Thu Jun 10 09:17:13 1998  Andreas Tille  (tille@physik.uni-halle.de)
+ 
+	* Better xpenguin pixmap from Stefan Gustavson <stegu@itn.liu.se>
+	* New e-mail address from Stefan Gustavson in the docs
+
+Thu May 03 08:44:13 1998  Andreas Tille  (tille@physik.uni-halle.de)
+ 
+	* Added xpenguin pixmap which was created by
+          Alex Romosan <romosan@caliban.lbl.gov>
+          (Thanks Alex)
+
+Thu Apr 22 17:56:11 1998  Andreas Tille  (tille@physik.uni-halle.de)
+
+        * -Fname option added to give the chance of loading different
+	  pixmaps
+	* Manpage updated according to this stuff
+	* xteddy.README: Imake stuff description replaced by
+	  configure description
+
+
+Thu Apr 02 11:11:11 1998  Andreas Tille  (tille@physik.uni-halle.de)
+
+	* automake Stuff added (Makefile.am, configure.in)
+	* deleted patchlevel.h because it's job is done by automake
+

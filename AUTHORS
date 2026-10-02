@@ -1,0 +1,10 @@
+Stefan Gustavson (stegu@itn.liu.se)
+   Basic program
+   
+Andreas Tille (tille@debian.org) 
+   some automake stuff and loading of different pixmaps
+   Replacing libXPM by Imlib
+
+Richard Neill <rn214@hermes.cam.ac.uk>
+   further improvements and fixes
+   more images

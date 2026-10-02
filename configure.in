@@ -1,0 +1,12 @@
+AC_INIT(xteddy.c)
+AM_INIT_AUTOMAKE(xteddy, 2.2)
+
+AC_PROG_CC
+
+AC_PATH_XTRA
+PKG_CHECK_MODULES(IMLIB2, imlib2)
+
+PIXMAP_PATH="/usr/share/xteddy"
+AC_SUBST(PIXMAP_PATH)
+
+AC_OUTPUT(Makefile html/Makefile images/Makefile)

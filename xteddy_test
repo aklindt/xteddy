@@ -1,0 +1,15 @@
+#!/bin/sh
+i=0
+if [ -d /usr/share/xteddy ] ; then
+  for img in `ls /usr/share/xteddy` ; do
+    i=`expr $i + 50`
+    xteddy -F/usr/share/xteddy/$img -geometry +$i+$i &
+  done
+fi
+if [ -d /usr/local/share/xteddy ] ; then
+  for img in `ls /usr/local/share/xteddy` ; do
+    i=`expr $i + 50`
+    xteddy -F/usr/local/share/xteddy/$img -geometry +$i+$i &
+  done
+fi
+

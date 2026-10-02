@@ -6,7 +6,7 @@ The general usage is also valid for XTeddy 2.0.
 
 You will get the original version at the official  homepage
 
-    http://www.itn.liu.se/~stegu/xteddy
+    http://www.itn.liu.se/~stegu/xteddy [offline]
 
 The new XTeddy was written to get great flexibility in using any image
 you want.  Not that I didn't like the original cuddly guy but he has
@@ -14,13 +14,13 @@ friends, too.  So I took some photos of my sons most loved toys and
 digitized them.
 
 To get various images included in XTeddy I decided to use Imlib
-(http://www.labs.redhat.com/imlib) in favour of libXpm.  So
+(http://www.labs.redhat.com/imlib [offline]) in favour of libXpm.  So
 any image format with transparency information can be used.
 
 The new XTeddy-2.0.x is available at Stefan Gustavsons server
 as well as at
 
-    http://people.debian.org/~tille/upstream/xteddy/
+    http://people.debian.org/~tille/upstream/xteddy/ [offline]
     
 The sources as well as Debian packages can be found at your
 nearest Debian mirror, too.

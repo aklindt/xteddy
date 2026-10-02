@@ -6,6 +6,8 @@ Xteddy does nothing else, but looking cute. And I wanted to preserve it.
 
 It should compile with a classic:
 
+```bash
 ./configure
 make
-make install
+sudo make install
+```

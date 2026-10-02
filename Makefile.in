@@ -116,7 +116,7 @@ INSTALL_SCRIPT = @INSTALL_SCRIPT@
 INSTALL_STRIP_PROGRAM = @INSTALL_STRIP_PROGRAM@
 LDFLAGS = @LDFLAGS@
 LIBOBJS = @LIBOBJS@
-LIBS = @LIBS@ -lXext
+LIBS = @LIBS@ -lXext /* added -lXext to link direktly to the libraries */
 LTLIBOBJS = @LTLIBOBJS@
 MAKEINFO = @MAKEINFO@
 MKDIR_P = @MKDIR_P@
@@ -184,7 +184,7 @@ xteddy_SOURCES = xteddy.c
 man_MANS = xteddy.6
 bin_SCRIPTS = xtoys xteddy_test
 AM_CFLAGS = @IMLIB2_CFLAGS@
-AM_LDFLAGS = @IMLIB2_LIBS@ -lX11 -lXext
+AM_LDFLAGS = @IMLIB2_LIBS@ -lX11 -lXext /* added -lXext to link direktly to the libraries */
 SUBDIRS = html images
 EXTRA_DIST = $(man_MANS)  $(bin_SCRIPTS) \
              README xteddy.README images.credit \
